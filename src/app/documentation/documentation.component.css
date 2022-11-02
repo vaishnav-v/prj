@@ -1,0 +1,3 @@
+:host ::ng-deep  p-panelmenu{
+    transition: all 1s;
+}
