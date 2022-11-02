@@ -4,7 +4,7 @@ import { DocumentationComponent } from './documentation.component';
 
 const routes: Routes = 
 [
-  { path: ' ', component: DocumentationComponent }
+  { path: '', component: DocumentationComponent }
 ];
 
 @NgModule({
