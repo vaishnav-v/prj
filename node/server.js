@@ -7,11 +7,21 @@ const cors = require('cors')
 const app = express()
 app.use(bodyparser.json())
 app.use('/api', routes)
-app.use(cors())
 app.use(express.static(path.join(__dirname,"docs")))
 app.use('/', express.static(path.join(__dirname,"docs")))
+app.use(cors({
+    Access_Control_Allow_Origin: "*",
+    origin:"*",
+    methode:['GET','POST','PATCH','DELETE','PUT'],
+    allowedHeaders:'Content-Type, Authorization, Origin, X-Requested-With, Accept'
+  
+  })); 
+app.use(function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+});
 
-PORT = process.env.PORT || 4200
+PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log("started on", PORT);
     console.log(__dirname+'./docs');

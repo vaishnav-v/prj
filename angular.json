@@ -68,9 +68,11 @@
           "configurations": {
             "production": {
               "browserTarget": "myApp:build:production"
+
             },
             "development": {
-              "browserTarget": "myApp:build:development"
+              "browserTarget": "myApp:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
