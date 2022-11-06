@@ -13,20 +13,21 @@ export class ArticleService {
   baseURL: string = '/api'
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  getID(articleName: string): Observable<JSON> {
-    let URL = this.baseURL + 'getID'
+  getID(articleName: string): Observable<string> {
+    let URL = this.baseURL + '/getID'
     const body =
     {
       articleName: articleName
     }
-    return this.http.post<JSON>(URL, body).pipe(retry(1), catchError(this.errorHandler))
+    return this.http.post<string>(URL, body).pipe(retry(1), catchError(this.errorHandler))
   }
   getArticles(): Observable<Article[]> {
     let URL = this.baseURL + '/articles'
     return this.http.get<Article[]>(URL).pipe(retry(1), catchError(this.errorHandler))
   }
   getArticle(articleID: string): Observable<Article> {
-    let URL = this.baseURL + '/getID' + articleID
+    let URL = this.baseURL + '/articles/' + articleID
+    console.log(URL);
     return this.http.get<Article>(URL).pipe(retry(1), catchError(this.errorHandler))
   }
   createArticle(data:JSON){

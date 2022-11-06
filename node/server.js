@@ -18,7 +18,6 @@ app.use(cors({
   })); 
 app.use(function (req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    next();
 });
 
 PORT = process.env.PORT || 3000
