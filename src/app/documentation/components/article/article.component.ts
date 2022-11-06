@@ -36,8 +36,7 @@ export class ArticleComponent implements OnInit {
   async readArticle() {  
     this.articleService.getArticle(this.articleID).subscribe(async (data) => {
       this.article = data
-      console.log(this.article);
-      
+      console.log(this.article);  
     })
   }
   
