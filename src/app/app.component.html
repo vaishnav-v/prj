@@ -1,19 +1,5 @@
 
-<app-navbar></app-navbar>
-<a [routerLink]="['./documentation']">doc</a>
+<a [routerLink]="['./documentation']"><h2>Documentation</h2></a>
 <router-outlet></router-outlet>
-<h5>Basic</h5>
-<p-button label="Submit"></p-button>
-<p-button label="Disabled button" [disabled]="true"></p-button>
-<p-button label="Reference Link" styleClass="p-button-link"></p-button>
 
-<h5>Icons</h5>
-<p-button icon="pi pi-check">
 
-</p-button>
-<p-button label="Submit" icon="pi pi-check"></p-button>
-<p-button label="Submit" icon="pi pi-check" iconPos="right"></p-button>
-<p-panelMenu [model]="items" 
-[style]="{'width':'300px','height':'100vh','overflow-y':'scroll'}"
-></p-panelMenu>
-<app-footer></app-footer>

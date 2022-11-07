@@ -1,26 +1,28 @@
-const { MongoClient, ObjectId } = require('mongodb') //mongoDB
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost:27017/login')
 
-const connectionURL = 'mongodb://localhost:27017'
-const dbName = 'project'
+const db = mongoose.connection
+db.on('error', console.log.bind(console, "error")) //database connection
+db.once('open', (x) => {
+    console.log("connection successful");
+})
 
-let db
-const init = () => {
-    MongoClient.connect(connectionURL, { useNewUrlParser: true })
-        .then(
-            (client) => { db = client.db(dbName) }
-        )
-}
-const insertItem = (item) => {
-    const collection = db.collection('items')
-    return collection.insertOne(item)
-}
-const getItems = () => {
-    const collection = db.collection('items')
-    return collection.find({}).toArray()
-}
-const updateQuantity = (id, quantity) => {
-    const collection = db.collection('items')
-    return collection.updateOne({ _id: ObjectId(id) }, { $set: { quantity } })
-}
+//article Schema
+const articleSchema = new mongoose.Schema({
+    articleName:{
+        type:'string',
+        required : true
+    },
+    content:{
+        type:'string',
+        required:true
+    },
+    uploadDate:{
+        type:'string',
+        required:true
+    }
 
-module.exports = {init, insertItem , getItems , updateQuantity}
+})
+
+const articlesCollection = mongoose.model('articles',articleSchema) //collection and schema
+module.exports = articlesCollection

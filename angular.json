@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "node/docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,9 +68,11 @@
           "configurations": {
             "production": {
               "browserTarget": "myApp:build:production"
+
             },
             "development": {
-              "browserTarget": "myApp:build:development"
+              "browserTarget": "myApp:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
