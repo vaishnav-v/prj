@@ -30,7 +30,7 @@ export class ArticleService {
     console.log(URL);
     return this.http.get<Article>(URL).pipe(retry(1), catchError(this.errorHandler))
   }
-  createArticle(data:JSON){
+  createArticle(data:Article){
     let URL = this.baseURL + '/new/article'
     return this.http.post(URL, data).pipe(catchError(this.errorHandler));
   }
