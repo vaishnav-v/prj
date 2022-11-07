@@ -1,24 +1,74 @@
-:host ::ng-deep  p-panelmenu{
+:host ::ng-deep p-panelmenu {
     transition: all 1s;
 }
 
-.sidebar{
+.sidebar {
     position: fixed;
-    top: 0;
+    top: 48px;
     left: 0;
-    margin:0;
+    margin: 0;
 }
-.content{
+
+.content {
     font-family: 'Roboto';
     padding: 0 5em;
     margin-left: 300px;
 }
-.content-header{
-    margin: 20px 0; 
+
+.content-header {
+    margin: 20px 0;
     font-size: 2rem;
 }
-.content-middle{
+
+.content-middle {
     font-weight: 300;
     font-size: 19px;
     line-height: 30px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 30px;
+    z-index: 10;
+    width: 100vw;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #e9e9e9;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #2196F3;
+    color: white;
+}
+
+.topnav .search-container {
+    float: right;
+}
+
+.topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    border: none;
+    font-size: 17px;
 }
