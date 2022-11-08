@@ -10,11 +10,11 @@ import { ArticleService } from '../shared/services/article.service';
 })
 export class AddContentComponent implements OnInit {
   addArticleForm!: FormGroup;
+  article!: Article;
   constructor
     (
       private fb: FormBuilder,
-      private articleService: ArticleService,
-      private article: Article,
+      private articleService: ArticleService, 
       
     ) {
 
@@ -22,18 +22,27 @@ export class AddContentComponent implements OnInit {
   ngOnInit(): void {
     this.addArticleForm = this.fb.group(
       {
-        articleTitle: ['', [Validators.required]],
+        articleName: ['', [Validators.required]],
         content: ['', [Validators.required]]
       }
     )
+    
+  }
+  get articleTitle() {
+    return this.addArticleForm.get('articleName')
+  }
+  get content() {
+    return this.addArticleForm.get('content')
   }
   onSubmit(){
-    console.log(this.addArticleForm.value); 
+     this.addArticle()
   }
 
   addArticle() {
+    this.article = this.addArticleForm.value
     this.articleService.createArticle(this.article).subscribe((data) => {
       console.log(data);
+      alert(data)
     })
   }
 

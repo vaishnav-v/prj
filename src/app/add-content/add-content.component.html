@@ -1,5 +1,5 @@
-<!-- <div class="add-content">
-    <div class="add-article"> -->
+ <div class="add-content">
+    <div class="add-article"> 
         <!-- <form action="new/article" method="post">
             <h2>Add New Article</h2>
             <div class="article-name">
@@ -12,24 +12,27 @@
             </div>
         </form> -->
         
-        <!-- <form [formGroup]="addArticleForm"  (ngSubmit)="onSubmit()">
-            <label>Article Title</label>
-            <input type="text" id="articleTitle" formControlName="articleTitle"  #articleTitle >
+         <form [formGroup]="addArticleForm"  (ngSubmit)="onSubmit()">
+            <label>Article Title</label><br>
+            <input type="text" id="articleTitle" formControlName="articleName" pInputText >
             <div *ngIf="articleTitle?.invalid && (articleTitle?.touched || articleTitle?.dirty)">
-                <small class="text-danger" *ngIf="articleTitle?.errors?.['required']">
+                <small  *ngIf="articleTitle?.errors?.['required']">
                     Title Is Required
                 </small>
-            </div>
-            <label>Content</label>
-            <textarea  formControlName="content">
+            </div><br>
+            <label>Content</label><br>
+            <textarea  formControlName="content" pInputTextarea>
 
             </textarea>
             <div *ngIf="content?.invalid && (content?.touched || content?.dirty)">
-                <small class="text-danger" *ngIf="content?.errors?.['required']">
+                <small  *ngIf="content?.errors?.['required']">
                     Content Is Required
                 </small>
             </div>
-            <input type="button" value="submit">
+            <div class="submit">
+                <input type="submit" value="submit">
+            </div>
+           
         </form>
     </div>
-</div> -->
+</div>
