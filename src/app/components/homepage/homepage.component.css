@@ -1,39 +1,16 @@
-.wrapper {
-    width: 1170px;
-    margin: auto;
+.homepage header {
+    background-color: rgb(153, 241, 246);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
 }
-
-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-        url(https://img.freepik.com/premium-photo/background-image-black-orange-programming-code-computer-screen-digital-devices-modern-white-office-interior-copy-space_236854-23780.jpg?w=1060);
-    height: 100vh;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
+.welcome-text{
+    position: absolute;
+    top: 50vh;
 }
-
-.nav-area {
-    float: right;
-    list-style: none;
-    margin-top: 30px;
-}
-
-.nav-area li a {
-    padding: 5px;
-    font-size: 11px;
-}
-
-.nav-area {
-    text-align: center;
-}
-
-.welcome-text {
-    width: 100%;
-    height: auto;
-    margin: 30% 0;
-}
-
-.welcome-text h1 {
-    font-size: 30px;
+header a {
+    text-decoration: none;
+    display: inline-block;
+    color: blue;
+    border: 1px solid #0505dc;
 }

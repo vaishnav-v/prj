@@ -1,7 +1,7 @@
 export class MenuModel {
     model = [
         {
-            label: 'File',
+            label: 'Home',
             icon: 'pi pi-fw pi-file',
             routerLink: ['./'],
             items: [
