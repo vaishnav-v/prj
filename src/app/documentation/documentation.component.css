@@ -1,7 +1,19 @@
 :host ::ng-deep p-panelmenu {
     transition: all 1s;
 }
+::selection{
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+::-webkit-scrollbar{
+    width: 0;
+    color: #000;
+}
 
+
+.documentation{
+    margin-top: 48px;
+}
 .sidebar {
     position: fixed;
     top: 48px;
@@ -16,7 +28,7 @@
 }
 
 .content-header {
-    margin: 20px 0 10px 0;
+    padding: 20px 0 10px 0;
     font-size: 2rem;
 }
 
@@ -27,57 +39,8 @@
     overflow-wrap: break-word;
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 30px;
-    z-index: 10;
-    width: 100vw;
-}
 
-.topnav {
-    overflow: hidden;
-    background-color: #e9e9e9;
-}
 
-.topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.topnav a.active {
-    background-color: #2196F3;
-    color: white;
-}
-
-.topnav .search-container {
-    float: right;
-    margin-right: 10px;
-}
-
-.topnav input[type=text] {
-    float: right;
-    padding: 6px;
-    margin-top: 8px;
-    margin-right: 16px;
-    border: none;
-    font-size: 17px;
-}
-.search{
-    display: inline-block;
-    margin: 7px;
-}
 .content-footer{
     background-color: aqua;
 }
@@ -86,7 +49,11 @@
     justify-content: center;
 }
 .footer .items{
+    cursor: pointer;
     margin: 30px 10px;
     padding: 10px 20px;
     border: 1px solid red;
+}
+.footer .items:hover{
+    background-color: brown;
 }
