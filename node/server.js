@@ -5,7 +5,7 @@ const routes = require("./routes")
 const cors = require('cors')
 
 const app = express()
-app.use(bodyparser.json())
+app.use(express.json())
 app.use('/api', routes)
 app.use(express.static(path.join(__dirname,"docs")))
 app.use('/', express.static(path.join(__dirname,"docs")))
