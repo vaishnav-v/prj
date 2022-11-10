@@ -42,6 +42,7 @@ router.get('/articles/:id', async (req, res) => {
         }
         else {
             res.json(data)
+            console.log(data);
 
         }
     })

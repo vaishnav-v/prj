@@ -1,5 +1,7 @@
+const { string } = require('joi')
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/login')
+var url  ='mongodb+srv://vav:vav@cluster0.skmwmfr.mongodb.net/login?retryWrites=true&w=majority'
+mongoose.connect(url)
 
 const db = mongoose.connection
 db.on('error', console.log.bind(console, "error")) //database connection
@@ -24,5 +26,5 @@ const articleSchema = new mongoose.Schema({
 
 })
 
-const articlesCollection = mongoose.model('articles',articleSchema) //collection and schema
+const articlesCollection = mongoose.model('details',articleSchema) //collection and schema
 module.exports = articlesCollection
